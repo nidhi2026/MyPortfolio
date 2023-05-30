@@ -545,8 +545,7 @@ header .navigation li:hover {
 }
 
 .slides {
-    width: 450%;
-    height: 500px;
+    width: 400vw;
     display: flex;
 }
 
@@ -563,7 +562,6 @@ header .navigation li:hover {
     width: 80vw;
     height: 100vh;
 }
-
 
 .navigation {
     position: absolute;
@@ -619,5 +617,42 @@ header .navigation li:hover {
 
 #wrap .slide img {
     width: 85%;
-    padding-left: 120px;
+    padding-left: 10vw;
 }
+
+@media only screen and (max-width: 1020px)   {
+    #wrap .slide img {
+        height: 85vh;
+        width: 90vw;
+        margin-top: 20px;
+    }
+}
+
+/* footer of main page */
+
+.footer {
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 25px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.footer .footer-title {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 25px;
+}
+
+
+.footer p a {
+    color: rgb(1, 157, 213);
+    font-weight: 700;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 21px;
+}
+
