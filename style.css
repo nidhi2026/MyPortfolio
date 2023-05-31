@@ -55,6 +55,7 @@ header .navigation a {
     text-decoration: none;
     margin-left: 30px;
     justify-content: space-around;
+    transition: 1s ease-in;
 }
 
 header .navigation li{
@@ -538,8 +539,8 @@ header .navigation li:hover {
 }
 
 .slider {
-    width: 90vw;
-    height: 90vh;
+    width: 80vw;
+    height: 80vh;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -547,6 +548,10 @@ header .navigation li:hover {
 .slides {
     width: 400vw;
     display: flex;
+}
+
+#wrap {
+    width: 360vw;
 }
 
 .slides input {
@@ -617,7 +622,7 @@ header .navigation li:hover {
 
 #wrap .slide img {
     width: 85%;
-    padding-left: 10vw;
+    padding-left: 9vw;
 }
 
 @media only screen and (max-width: 1020px)   {
@@ -656,3 +661,66 @@ header .navigation li:hover {
     font-size: 21px;
 }
 
+
+/* loading animation */
+
+.load {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: animateBg 10s linear infinite;
+}
+
+@keyframes animateBg {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.loader {
+    z-index: 999;
+    position: fixed;
+    position: absolute;
+    width: 120px;
+    height: 120px;
+}
+
+.loader span {
+    position: absolute;
+    top: 45%;
+    right: 1%;
+    width: 100%;
+    height: 100%;
+    transform: rotate(calc(18deg * var(--i)));
+}
+
+.loader span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 15px;
+    border-radius: 10%;
+    background-color: #00aaff;
+    box-shadow: 0 0 10px #00aaff,
+    0 0 20px #00aaff,
+    0 0 40px #00aaff,
+    0 0 60px #00aaff,
+    0 0 80px #00aaff,
+    0 0 100px #00aaff;
+    animation: animate 1s linear infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
